@@ -1,15 +1,14 @@
 {
   "expo": {
-    "name": "pet-cuidado-front",
-    "slug": "pet-cuidado-front",
+    "name": "pet-cuidado",
+    "slug": "pet-cuidado",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
     "splash": {
       "image": "./assets/splash.png",
-      "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "resizeMode": "contain"
     },
     "assetBundlePatterns": [
       "**/*"
