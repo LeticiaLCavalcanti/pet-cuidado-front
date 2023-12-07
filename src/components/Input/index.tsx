@@ -3,7 +3,7 @@ import React from "react";
 import * as designTokens from "../../styles/designTokens";
 
 interface Props {
-    placeholder?: string
+    placeholder?: string,
 }
 
 export default function Input({placeholder}: Props) {
@@ -15,10 +15,10 @@ const styles = StyleSheet.create({
     height: 56,
     width: "100%",
     backgroundColor: designTokens.colorNeutralLight,
-    padding: 10,
+    padding: designTokens.spacingInsetSm,
     borderColor: designTokens.colorNeutralMedium,
-    borderWidth: 1,
-    borderRadius: 6,
-    marginBottom: 16,
+    borderWidth: designTokens.borderWidthThin,
+    borderRadius: designTokens.borderRadiusSm,
+    marginBottom: designTokens.spacingStackXs,
   }
 });

@@ -4,6 +4,7 @@ import Text from "../components/Texts/Text";
 import Button from "../components/Button";
 import Input from "../components/Input/index";
 import { Link } from '@react-navigation/native';
+import InputPassword from "../components/Input/InputPassword";
 
 
 export default function Login() {
@@ -11,7 +12,7 @@ export default function Login() {
       <View style={styles.wrapper}>
         <Input placeholder={'Nome'} />
         <Input placeholder={'E-mail'} />
-        <Input placeholder={'Digite sua senha'} />
+        <InputPassword placeholder="Insira sua senha" />
           <Link to="" style={styles.link}>
             <Text>
                 Esqueceu sua senha?
