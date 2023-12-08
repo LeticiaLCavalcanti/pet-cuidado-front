@@ -13,17 +13,16 @@ import * as designTokens from '../../styles/designTokens'
 
 export interface Props extends TextInputProps{
   placeholder: string,
-  style?: any
 }
 
-export default function InputPassword(props: Props) {
+export default function InputPassword({placeholder}: Props) {
   const [input, setInput] = useState("");
   const [hitdePass, setHidePass] = useState(true)
 
   return (
     <View style={styles.InputContainer}>
       <TextInput
-        placeholder={props.placeholder}
+        placeholder={placeholder}
         secureTextEntry={hitdePass}
         onChangeText={(texto) => {
           setInput(texto);

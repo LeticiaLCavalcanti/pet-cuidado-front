@@ -1,13 +1,13 @@
-import { StyleSheet, TextInput  } from "react-native";
+import { StyleSheet, TextInput, TextInputProps  } from "react-native";
 import React from "react";
 import * as designTokens from "../../styles/designTokens";
 
-interface Props {
-    placeholder?: string,
+export interface Props extends TextInputProps{
+  placeholder: string,
 }
 
 export default function Input({placeholder}: Props) {
-  return <TextInput style={styles.input} placeholder={placeholder} />;
+  return <TextInput style={styles.input} placeholder={placeholder}/>;
 }
 
 const styles = StyleSheet.create({
