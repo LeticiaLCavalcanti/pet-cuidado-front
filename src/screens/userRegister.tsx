@@ -13,6 +13,7 @@ import { useForm, Controller, SubmitHandler } from "react-hook-form";
 
 type FormData = {
   name: string;
+  username: string;
   email: string;
   password: string;
 };
@@ -22,8 +23,8 @@ export default function UserRegister() {
   const navigation = useNavigation<StackTypes>();
 
   const {
-    handleSubmit,
     control,
+    handleSubmit,
     setValue,
     formState: { errors },
   } = useForm<FormData>();
@@ -31,11 +32,11 @@ export default function UserRegister() {
   const onSubmit: SubmitHandler<FormData> = async (data) => {
     try {
       const response = await axios.post(`${baseURL}/user/create`, data);
-
+    
       if (response.status === 201) {
         console.log('Post criado com sucesso:', response.data);
+        navigation.navigate("PetDetails")
 
-        navigation.navigate('PetDetails')
       } else {
         console.error('Erro ao criar o post:', response.status);
       }
@@ -64,6 +65,23 @@ export default function UserRegister() {
       />
        {errors.name && <Text style={styles.error}>{errors.name.message}</Text>}
 
+       <Controller
+        control={control}
+        render={({ field: { onChange, value } }) => (
+          <Input
+            placeholder="User name"
+            value={value}
+            onChangeText={(text) => {
+              setValue('name', text);
+              onChange(text);
+            }}
+          />
+        )}
+        name="username"
+        defaultValue=""
+      />
+       {errors.username && <Text style={styles.error}>{errors.username.message}</Text>}
+
       <Controller
         control={control}
         render={({ field: { value, onChange } }) => (
@@ -76,6 +94,7 @@ export default function UserRegister() {
               onChange(text);
             }}
             autoCapitalize="none"
+            keyboardType="email-address"
           />
         )}
         name="email"

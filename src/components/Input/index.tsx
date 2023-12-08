@@ -6,8 +6,8 @@ export interface Props extends TextInputProps{
   placeholder: string,
 }
 
-export default function Input({placeholder}: Props) {
-  return <TextInput style={styles.input} placeholder={placeholder}/>;
+export default function Input({placeholder, ...rest}: Props) {
+  return <TextInput style={styles.input} placeholder={placeholder} {...rest}/>;
 }
 
 const styles = StyleSheet.create({
