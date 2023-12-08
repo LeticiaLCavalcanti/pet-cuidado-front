@@ -15,7 +15,7 @@ export interface Props extends TextInputProps{
   placeholder: string,
 }
 
-export default function InputPassword({placeholder}: Props) {
+export default function InputPassword({placeholder, ...rest}: Props) {
   const [input, setInput] = useState("");
   const [hitdePass, setHidePass] = useState(true)
 
@@ -27,6 +27,7 @@ export default function InputPassword({placeholder}: Props) {
         onChangeText={(texto) => {
           setInput(texto);
         }}
+        {...rest}
       />
       <TouchableOpacity onPress={() => {setHidePass(!hitdePass)}}>
         <Icon name={hitdePass ? 'eye-with-line' : 'eye'} size={20} color={"#ccc"} />

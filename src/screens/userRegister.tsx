@@ -35,7 +35,7 @@ export default function UserRegister() {
     
       if (response.status === 201) {
         console.log('Post criado com sucesso:', response.data);
-        navigation.navigate("PetDetails")
+        navigation.navigate("Login")
 
       } else {
         console.error('Erro ao criar o post:', response.status);
