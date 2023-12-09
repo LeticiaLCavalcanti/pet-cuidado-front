@@ -5,7 +5,7 @@ import Input from "../components/Input/index";
 import NewAvatar from "../components/NewAvatar/NewAvatar";
 import { useNavigation } from "@react-navigation/native";
 import { StackTypes } from "../routes";
-
+import instance from "../services/api";
 
 export default function PetRegister() {
   const navigation = useNavigation<StackTypes>();
